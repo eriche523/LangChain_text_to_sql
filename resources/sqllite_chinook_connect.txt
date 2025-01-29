@@ -1,0 +1,10 @@
+# connect to local sql db
+# copy and paste the three line into sqlite
+
+.open Chinook.db
+.read Chinook_Sqlite.sql.read
+C:\Users\Eric_\PycharmProjects\LangChain_text_to_sql\LangChain_text_to_sql\resources\Chinook_Sqlite.sql
+
+# test query results
+.tables
+SELECT * FROM Artist LIMIT 5;
