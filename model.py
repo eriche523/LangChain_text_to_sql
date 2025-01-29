@@ -156,7 +156,7 @@ albums[:5]
 
 from langchain_openai import OpenAIEmbeddings
 
-embeddings = OpenAIEmbeddings(api_key = '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')
+embeddings = OpenAIEmbeddings(api_key = '')
 
 # | output: false
 # | echo: false
