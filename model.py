@@ -2,8 +2,9 @@ from langchain_community.utilities import SQLDatabase
 from typing_extensions import TypedDict
 from dotenv import load_dotenv
 import os
+import config
 
-db = SQLDatabase.from_uri("sqlite:///C:/Users/Eric_/PycharmProjects/LangChain_text_to_sql/LangChain_text_to_sql/resources/Chinook.db")
+db = SQLDatabase.from_uri(config.db_path)
 print(db.dialect)
 print(db.get_usable_table_names())
 db.run("SELECT * FROM Artist LIMIT 10;")
@@ -24,7 +25,7 @@ class State(TypedDict):
 from langchain_openai import ChatOpenAI
 
 # get key from .env the API key, Load the .env file
-load_dotenv(dotenv_path=r"C:\Users\Eric_\PycharmProjects\LangChain_text_to_sql\LangChain_text_to_sql\.env")
+load_dotenv(dotenv_path=config.api_env_path)
 
 # Get the API key
 openrouter_api_key = os.getenv("OPENAI_API_KEY")

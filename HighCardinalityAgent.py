@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_community.utilities import SQLDatabase
 import os
+import config
 
 class SQLQueryAgent:
     def __init__(self, database: object, llm, openrouter_api_key):
@@ -115,7 +116,7 @@ class SQLQueryAgent:
 # Example usage
 if __name__ == "__main__":
     # Load API Key from .env file
-    load_dotenv(dotenv_path=r"C:\Users\Eric_\PycharmProjects\LangChain_text_to_sql\LangChain_text_to_sql\.env")
+    load_dotenv(dotenv_path=config.api_env_path)
     api_key = os.getenv("OPENAI_API_KEY")
 
     # --------------------- INITIALIZE LLM AND DATABASE ---------------------
@@ -124,7 +125,7 @@ if __name__ == "__main__":
     router_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, api_key=api_key)
 
     # Initialize database connection
-    db_uri = "sqlite:///C:/Users/Eric_/PycharmProjects/LangChain_text_to_sql/LangChain_text_to_sql/resources/Chinook.db"
+    db_uri = config.db_path
     db = SQLDatabase.from_uri(db_uri)
 
     # Initialize the Query Agent with an external LLM
