@@ -86,6 +86,6 @@ if __name__ == "__main__":
 Routing to: advanced_sql
 Query Result: [('The Rolling Stones', 1998, $45.00), ('U2', 1999, $50.00), ('Coldplay', 2002, $30.00)]
 
+```
 
-![text_to_sql_demo_gif](https://github.com/user-attachments/assets/3d30c7a0-03fc-4491-9293-c35e08eaa244)
-
+![text_to_sql_demo_gif](https://github.com/user-attachments/assets/98c90e92-6261-4c60-9e8e-07655b754cb7)
